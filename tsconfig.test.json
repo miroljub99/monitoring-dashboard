@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2022",
+    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "**/*.test.tsx"]
+}
