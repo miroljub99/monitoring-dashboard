@@ -1,6 +1,6 @@
 import {useServicesStore} from './servicesStore';
 import {mockService} from '../_mocks_/servicesMocks';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 import * as api from '../api';
 
 jest.mock('../api');
