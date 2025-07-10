@@ -22,6 +22,6 @@ export default function StatusBadge({status}: StatusBadgeProps){
 
     const {emoji,label} = statusMap[status];
     return(<>
-        <span>{emoji+`:`+label}</span>
+        <span>{emoji+` `+label}</span>
     </>);
 }

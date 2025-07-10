@@ -8,7 +8,7 @@ import {mockCardProps} from '../../_mocks_/serviceCardMock';
 
 describe('ServiceCard',()=>{
     it('renders service name, status and country code',()=>{});
-        render(<ServiceCard {...mockCardProps}/>);
+         render(<ServiceCard {...mockCardProps}/>);
 
          expect(screen.getByText(/Monitoring Service/i)).toBeInTheDocument();
          expect(screen.getByText(/Online/)).toBeInTheDocument(); // StatusBadge

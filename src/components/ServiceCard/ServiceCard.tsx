@@ -34,7 +34,7 @@ export default function ServiceCard(props:ServiceCardProps){
             <div>
                 <h3>{name}</h3>
                 <StatusBadge status={status}/>
-                <abbr title="Country code">{countryCode}</abbr>
+                <small>{` `+countryCode}</small>
             </div>
             {/* Metric section*/}
             <div>
