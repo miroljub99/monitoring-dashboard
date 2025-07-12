@@ -15,6 +15,6 @@ interface MetricProps {
 export default function Metric ({label,value}: MetricProps){
     
     return(<>
-        <span style={{marginLeft: 22}}>{label+`: `+value}</span>
+        <span>{label+`: `+value}</span>
     </>);
 }

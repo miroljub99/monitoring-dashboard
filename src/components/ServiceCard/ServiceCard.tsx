@@ -1,6 +1,7 @@
 import type { Service } from "../../types"
 import { ReactNode } from "react";
 import {Metric,StatusBadge} from "../index";
+import { CardWrapper,HeaderSection,MetricSection,TechnicalSection } from "./ServiceCard.styled";
 
 
 /**
@@ -29,25 +30,25 @@ export default function ServiceCard(props:ServiceCardProps){
     const {id,name,status,responseTime,cpu,memory,load,uptime,errors,countryCode,onClick} = props;
 
     return(<>
-        <div key={id} data-testid="service-card" onClick={onClick}>
-            {/* Head section */}
-            <div>
-                <h3>{name}</h3>
-                <StatusBadge status={status}/>
-                <small>{` `+countryCode}</small>
-            </div>
-            {/* Metric section*/}
-            <div>
-                <Metric label={'CPU'} value={cpu}/>
-                <Metric label={'Memory'} value={memory}/>
-                <Metric label={'Load'} value={load}/>
-            </div>
-            {/* Technical section */}
-            <div>
-                <Metric label={'Up Time'} value={uptime}/>
-                <Metric label={'Response time'} value={responseTime}/>
-                <Metric label={'Errors'} value={errors}/>
-            </div>
-        </div>
+            <CardWrapper key={id} data-testid="service-card" onClick={onClick}>
+                {/* Head section */}
+                <HeaderSection>
+                    <h3>{name}</h3>
+                    <StatusBadge status={status}/>
+                    <small>{` `+countryCode}</small>
+                </HeaderSection>
+                {/* Metric section*/}
+                <MetricSection>
+                    <Metric label={'CPU'} value={cpu}/>
+                    <Metric label={'Memory'} value={memory}/>
+                    <Metric label={'Load'} value={load}/>
+                </MetricSection>
+                {/* Technical section */}
+                <TechnicalSection>
+                    <Metric label={'Up Time'} value={uptime}/>
+                    <Metric label={'Resp. time'} value={responseTime}/>
+                    <Metric label={'Errors'} value={errors}/>
+                </TechnicalSection>
+            </CardWrapper>
     </>);
 }

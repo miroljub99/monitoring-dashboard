@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useLayoutEffect } from "react";
 import { useServicesStore } from "@/stores";
 import { ServiceCard } from "@/components";
 import { mapToCardProps } from "@/utils/mappers";
+import { ServiceListWrapper } from "./ServiceList.styled.tsx";
 
 
 export default function ServiceList(){
@@ -11,7 +12,11 @@ export default function ServiceList(){
     const error = useServicesStore(state => state.error);
     const fetchAndSetServices = useServicesStore(state => state.fetchAndSetServices);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
+    //Ref for scroll element and position
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const scrollPosition = useRef<number>(0);
 
+ 
     //Fetching the services and put to store
     useEffect(()=>{
         fetchAndSetServices();
@@ -50,15 +55,40 @@ export default function ServiceList(){
 
     },[fetchAndSetServices]);
 
+    //Restore scroll position after update
+    useLayoutEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+
+        el.scrollTop = scrollPosition.current;
+    }, [services]);
+
+    // Listen to scroll events and store the current scroll position,
+    // so it can be restored after re-render or component remount.
+    useEffect(() => {
+        const node = scrollRef.current;
+        if (!node) return;
+
+        const handler = () => {
+            scrollPosition.current = node.scrollTop;
+        };
+
+        node.addEventListener("scroll", handler);
+
+        return () => {
+            node.removeEventListener("scroll", handler);
+        };
+    }, [scrollRef.current]);
+
     if(loading) return <p>Loading...</p>
-    if(error) return <p>Error</p>
+    if(error) return <p>{error}</p>
     if(!services.length) return <p>No services available</p>
 
     return(<>
-        <div>
+        <ServiceListWrapper ref={scrollRef}>
             {services.map(service => (
                 <ServiceCard key={service.id} {...mapToCardProps(service)} />
             ))}
-        </div>
+        </ServiceListWrapper>
     </>);
 }
