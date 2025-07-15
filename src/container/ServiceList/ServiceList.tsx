@@ -80,7 +80,7 @@ export default function ServiceList(){
         };
     }, [scrollRef.current]);
 
-    if(loading) return <p>Loading...</p>
+    if(!services.length && loading) return <p>Loading...</p>
     if(error) return <p>{error}</p>
     if(!services.length) return <p>No services available</p>
 

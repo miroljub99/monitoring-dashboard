@@ -1,3 +1,12 @@
 export {default as ServiceCard} from './ServiceCard/ServiceCard';
 export {default as Metric} from './Metric/Metric';
 export {default as StatusBadge} from './StatusBadge/StatusBadge';
+export * from './UI/Typography';
+export {default as SideBar} from './SideBar/SideBar';
+export {default as NavButton} from './UI/NavButton/NavButton';
+export {default as Header} from './Header/Header';
+export {default as SearchBar } from './UI/SearchBar/SearchBar';
+export {default as UserMenu} from './UI/UserMenu/UserMenu';
+export {default as Avatar} from './UI/Avatar/Avatar';
+export {default as Notification} from './UI/Notification/Notification';
+export {default as ThemeToggle} from './UI/ThemeToggle/ThemeToggle';

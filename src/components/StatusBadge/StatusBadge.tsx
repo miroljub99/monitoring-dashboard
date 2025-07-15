@@ -1,5 +1,5 @@
 
-import type { Service } from "../../types"
+import type { Service } from "../../types";
 
 interface StatusBadgeProps {
     status: Service['status'];

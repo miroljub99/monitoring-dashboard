@@ -9,8 +9,9 @@ export const CardWrapper = styled.div`
     padding: 8px 0px;
 
     width: auto;
-
-    border: 1px solid white;
+    background:${({theme})=>( theme.colors.surface)};
+    border: 3px solid ${({theme})=>( theme.colors.border)};
+    border-radius: ${({theme})=>( theme.borderRadius.sm)}
 
 `;
 
@@ -24,10 +25,10 @@ export const HeaderSection = styled.div`
 
     padding: 0px 23px;
     
-    max-width: 360px;
+    max-width: 400px;
 
     > :nth-child(1){
-        flex:4;
+        flex:3;
      }
     > :nth-child(2){
         flex:2;

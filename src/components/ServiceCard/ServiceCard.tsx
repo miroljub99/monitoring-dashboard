@@ -2,6 +2,7 @@ import type { Service } from "../../types"
 import { ReactNode } from "react";
 import {Metric,StatusBadge} from "../index";
 import { CardWrapper,HeaderSection,MetricSection,TechnicalSection } from "./ServiceCard.styled";
+import { Heading3,Caption } from "../index";
 
 
 /**
@@ -25,6 +26,9 @@ export interface ServiceCardProps{
 
 };
 
+/**
+ * Renders a service summary card with status, metrics, and country code.
+ */
 export default function ServiceCard(props:ServiceCardProps){
 
     const {id,name,status,responseTime,cpu,memory,load,uptime,errors,countryCode,onClick} = props;
@@ -33,9 +37,10 @@ export default function ServiceCard(props:ServiceCardProps){
             <CardWrapper key={id} data-testid="service-card" onClick={onClick}>
                 {/* Head section */}
                 <HeaderSection>
-                    <h3>{name}</h3>
+                    <Heading3>{name}</Heading3>
                     <StatusBadge status={status}/>
-                    <small>{` `+countryCode}</small>
+                    <Caption>{` `+countryCode}</Caption>
+
                 </HeaderSection>
                 {/* Metric section*/}
                 <MetricSection>

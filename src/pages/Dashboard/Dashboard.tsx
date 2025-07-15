@@ -1,6 +1,7 @@
 import { ServiceList } from "@/container";
 import { DashboardLayout,SideBarLayout,ContentAreaLayout,NavBarLayout,MainLayout,HeaderLayout } from "./Dashboard.styled";
 import { useServicesStore } from "@/stores";
+import {SideBar,Header} from '@/components'
 
 export default function Dashboard(){
 
@@ -9,11 +10,11 @@ export default function Dashboard(){
     return(<>
     <DashboardLayout>
         <SideBarLayout>
-            <p>Side Bar</p>
+            <SideBar/>
         </SideBarLayout>
         <ContentAreaLayout>
             <NavBarLayout>
-                <p>Navbar</p>
+                <Header/>
             </NavBarLayout>
             <MainLayout>
                 <HeaderLayout>

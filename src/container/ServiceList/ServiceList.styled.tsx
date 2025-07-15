@@ -11,9 +11,6 @@ export const ServiceListWrapper =  styled.div`
 
     width: auto;
 
-    border: 1px solid white;
+    border: 1px solid ${({theme})=>( theme.colors.border)};
+    border-radius: ${({theme})=>( theme.borderRadius.md)};
 `;
-
-
-
-

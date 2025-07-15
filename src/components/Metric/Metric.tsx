@@ -1,4 +1,4 @@
-
+import { Paragraph } from "../UI/Typography";
 /**
  * Props for the Metric component.
  * Used to display a single labeled metric (e.g., CPU: 45%).
@@ -15,6 +15,6 @@ interface MetricProps {
 export default function Metric ({label,value}: MetricProps){
     
     return(<>
-        <span>{label+`: `+value}</span>
+        <Paragraph>{label+`: `+value}</Paragraph>
     </>);
 }
