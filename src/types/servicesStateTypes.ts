@@ -12,5 +12,6 @@ export interface ServicesState {
     setServices: (newServices: Service[]) => void;   // Replace current services list
     setLoading: (loading: boolean) => void;         // Update loading state
     setError: (err: string | null) => void;         // Update error message or clear it
+    getServiceById:(id:number)=>Service | undefined;            // Get service by id itself
     fetchAndSetServices: () => Promise<void>;       // Fetch services from API and update store
 }

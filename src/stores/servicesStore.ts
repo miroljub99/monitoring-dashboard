@@ -13,6 +13,10 @@ export const useServicesStore = create<ServicesState>((set,get)=>({
     setServices:(newServices)=>{set({services:newServices});},   //Update services
     setLoading:(loading)=>{set({loading})},                      //Update loading
     setError:(error)=>{set({error})},                            //Update error
+    getServiceById:(id)=>{
+        const {services} = get();
+        return services.find(service => service.id === id);      //Get service by id
+    },
     fetchAndSetServices: async ()=>{
         const {setServices,setLoading,setError} = get();
 
