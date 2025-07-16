@@ -1,14 +1,29 @@
 import {Avatar,Paragraph} from '@/components';
-import { UserWrapper } from './UserMenu.styled';
-import { ChevronDown } from 'lucide-react';
+import { Divider, DropDownMenu, UserWrapper } from './UserMenu.styled';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 
 export default function UserMenu(){
-    
+
+    const [isOpen,setIsOpen] = useState<boolean>();
+
+    function toggleMenu(){
+        setIsOpen(prev => !prev);
+    }
+
     return(<>
-        <UserWrapper>
+        <UserWrapper onClick={toggleMenu}>
             <Avatar/>
             <Paragraph>Miroljub Radojkovic</Paragraph>
-            <ChevronDown/>
+            {isOpen ? <ChevronUp/>:<ChevronDown/>}
+            {isOpen && <DropDownMenu>
+                <span>My Profile</span>
+                <span>Profile Settings</span>
+                <Divider/>
+                <span>Log Out</span>
+            </DropDownMenu>}
+            
         </UserWrapper>
+        
         </>);
 }

@@ -18,5 +18,5 @@ export const RightSection = styled.div(({theme:{spacing}})=>({
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
-    gap:spacing(8),
+    gap:spacing(4),
 }));

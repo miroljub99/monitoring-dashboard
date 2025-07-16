@@ -12,9 +12,10 @@ export default function Avatar({src = user,alt = 'Avatar',size = 48}:AvatarProps
 };
 
 const StyledAvatar = styled.img<{size:number}>(({size,theme:{colors}})=>({
+    userSelect:'none',
     width:size,
     height:size,
     borderRadius:'50%',
     objectFit:'cover',
-    border:`2px solid ${colors.border}`,
+    border:`1px solid ${colors.border}`,
 }))
