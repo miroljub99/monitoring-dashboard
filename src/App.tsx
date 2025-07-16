@@ -1,13 +1,11 @@
 import { Dashboard } from './pages'
-//import './App.css'
 
-function App() {
+export default function App() {
 
   return (
     <>
       <Dashboard/>
     </>
   )
-}
+};
 
-export default App

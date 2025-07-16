@@ -1,15 +1,32 @@
+import { useEffect,useRef } from "react";
 import styled from "@emotion/styled";
 import { Bell } from "lucide-react";
 import { useState } from "react";
 
 export default function Notification(){
     const [isOpen,setIsOpen] = useState<boolean>(false);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     function toggleNotif(){
         setIsOpen(prev => !prev);
-    }
+    };
+
+    //Check if is clicked outside and set isOpen false
+     useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return(<>
-        <Wrapper>
+        <Wrapper ref={menuRef}>
             <NotificationWrapper onClick={toggleNotif}>
                 <Bell size={28} strokeWidth={1.5}/>
             </NotificationWrapper>

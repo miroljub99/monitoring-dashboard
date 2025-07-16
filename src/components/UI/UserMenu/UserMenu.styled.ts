@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const UserWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
     userSelect:'none',
-    position:'relative',
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
@@ -33,4 +32,11 @@ export const Divider = styled.div(({theme:{colors,spacing}})=>({
     height:spacing(0.5),
     background:colors.border,
 
-}))
+}));
+
+export const Wrapper = styled.div(({theme})=>({
+    position:'relative',
+    display:'flex',
+    flexDirection:'row',
+}));
+

@@ -2,10 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ThemeProvider } from '@emotion/react'
 import { darkTheme,lightTheme } from '@/theme'
-//import './index.css'
 import App from './App.tsx'
 import GlobalStyles from './theme/GlobalStyles.tsx';
-import { useThemeStore } from './stores/toggleStore.ts'
+import { useThemeStore } from './stores/toggleStore.ts';
+import { BrowserRouter } from 'react-router-dom'
 
 function ThemeWrapper (){
   const mode = useThemeStore((state) => state.mode);
@@ -13,8 +13,10 @@ function ThemeWrapper (){
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <App />
+      <BrowserRouter>
+        <GlobalStyles />
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

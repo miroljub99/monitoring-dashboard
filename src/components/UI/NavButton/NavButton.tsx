@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { ChevronDown,ChevronUp } from "lucide-react";
 import { ButtonWrapper,ContentWrapper } from "./NavButton.styled";
 import { Service } from "@/types";
+import { useNavigate } from "react-router-dom";
 
 interface NavButtonProps{
     label: string;
@@ -25,11 +26,15 @@ const statusMap = {
 export default function NavButton(props:NavButtonProps){
     const {label,route,icon,collapsible,listItem = []} = props;
     const Icon = icon;
-    const [isOpen,setIsOpen] = useState<boolean>(false); 
+    const [isOpen,setIsOpen] = useState<boolean>(false);
+    const navigate = useNavigate(); 
 
     function handleClick(){
         if(collapsible){
             setIsOpen(isOpen => !isOpen);
+        }
+        if(route){
+            navigate(route);
         }
     }
     return(<>

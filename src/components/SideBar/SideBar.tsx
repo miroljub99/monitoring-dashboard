@@ -28,12 +28,13 @@ export default function SideBar(){
                                    icon={item.icon}
                                    collapsible={item.collapsible || false}
                                    listItem={item.collapsible ? services : []}
+                                   route={item.route}
                         />
                     ))}
                 </SideTopWrapper>
                 <SideBottomWrapper>
                     {sideBarItemBottom.map(item=>(
-                        <NavButton label={item.label} icon={item.icon} listItem={item.collapsible ? services : []}/>
+                        <NavButton label={item.label} icon={item.icon} listItem={item.collapsible ? services : []} route={item.route}/>
                     ))}
                 </SideBottomWrapper>
             </NavWrapper>
