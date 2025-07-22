@@ -7,6 +7,7 @@ export const Heading1 = styled.h1(({ theme: { font, colors } }) => ({
   lineHeight: font.lineHeight.h1,
   fontWeight: font.weight.bold,
   color: colors.text,
+  margin:'0px',
 }))
 
 // H2 – Section title
@@ -24,6 +25,7 @@ export const Heading3 = styled.h3(({ theme: { font, colors } }) => ({
   lineHeight: font.lineHeight.h3,
   fontWeight: font.weight.medium,
   color: colors.text,
+  margin:'0px',
 }))
 
 
@@ -33,6 +35,7 @@ export const Paragraph = styled.p(({ theme: { font, colors } }) => ({
   lineHeight: font.lineHeight.paragraph,
   fontWeight: font.weight.normal,
   color: colors.text,
+  margin:'0px',
 }))
 
 // Caption – Small text (e.g. timestamps, meta info)

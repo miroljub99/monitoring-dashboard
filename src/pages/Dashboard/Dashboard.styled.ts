@@ -21,7 +21,6 @@ export const SideBarLayout = styled.aside`
 export const ContentAreaLayout = styled.div`
     display: grid;
     grid-template-rows: 72px 1fr;
-
     min-height: 0;
 
     border-bottom: 2px solid ${({theme})=>( theme.colors.border)};
@@ -39,9 +38,12 @@ export const MainLayout = styled.main`
     gap: 12px;
     overflow: hidden;
 
+    width: 100%;
+    max-width: 1440px;
     max-height: 100%;
     min-height: 0;
     
+    margin: 0 auto;
     padding: ${({theme:{spacing}})=>(spacing(4))} ${({theme:{spacing}})=>(spacing(8))};
 `;
 

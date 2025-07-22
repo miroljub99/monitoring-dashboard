@@ -37,6 +37,11 @@ export default function NavButton(props:NavButtonProps){
             navigate(route);
         }
     }
+
+    function handeListClick(id: number){
+
+        navigate(`/service/${id}`);
+    }
     return(<>
         <ButtonWrapper onClick={handleClick}>
             <Icon size={32} strokeWidth={1}/><span>{label}</span>{collapsible && (isOpen ? <ChevronUp size={18}/>:<ChevronDown size={18}/>)}
@@ -44,7 +49,7 @@ export default function NavButton(props:NavButtonProps){
         {collapsible && (
             <ContentWrapper isOpen={isOpen}>
                 {(listItem as Service[]).map(item =>(
-                    <ButtonWrapper><span>{item.name}</span>{statusMap[item.status].emoji}</ButtonWrapper>
+                    <ButtonWrapper onClick={()=> handeListClick(item.id)}><span>{item.name}</span>{statusMap[item.status].emoji}</ButtonWrapper>
                 ))}
             </ContentWrapper>
         )}
