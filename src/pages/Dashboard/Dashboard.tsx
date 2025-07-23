@@ -7,10 +7,16 @@ import { useEffect } from "react";
 
 export default function Dashboard(){
 
-    const fetch = useServicesStore(state => state.fetchAndSetServices)
+    const startPolling = useServicesStore(state => state.startPolling);
+    const stopPolling = useServicesStore(state => state.stopPolling);
 
     useEffect(()=>{
-        fetch();
+
+       startPolling();
+
+       return ()=>{
+        stopPolling();
+       }
     },[]);
 
     return(<>
@@ -23,7 +29,6 @@ export default function Dashboard(){
                 <Header/>
             </NavBarLayout>
             <MainLayout>
-                <button onClick={fetch}>Fetch me</button>
                 <Routes>
                     <Route path="/" />
                     <Route path="/dashboard" element={<ServiceList/>}/>
