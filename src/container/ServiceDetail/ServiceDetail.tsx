@@ -1,15 +1,20 @@
 import { useParams } from "react-router-dom";
 import { useServicesStore } from "@/stores";
-import { ServiceOverview,ServiceMetrics,ServiceStats,ServiceEvents, ServiceSecurity,ServiceResponsiveTime } from "@/components";
+import { ServiceOverview,ServiceMetrics,ServiceStats,ServiceEvents, ServiceSecurity,ServiceResponsiveTime,Loading,Error } from "@/components";
 import styled from "@emotion/styled";
 
 export default function ServiceDetail(){
+    const services = useServicesStore(state => state.services);
+    const loading = useServicesStore(state => state.loading);
+    const error = useServicesStore(state => state.error);
     const {id} = useParams<string>();
-    const service = useServicesStore(state => state.services.find(s => s.id === Number(id)));
+    const service = services.find(s => s.id === id);
 
-    if (!service) {
-        return <p>Loading service details...</p>;
-    }
+    if(loading || !services.length) return <Loading label="Loading service details..."/>;
+    if(error) return <Error label={error}/>;
+    if(!service) return <Error label="Service not found"/>;
+    
+    
     return(<>
         <ServiceDetailWrapper>
             <ServiceOverview name={service.name} status={service.status} version={service.version} countryCode={service.countryCode}/>
@@ -20,8 +25,8 @@ export default function ServiceDetail(){
             
             <BoxWrapper>
                 <ServiceEvents events={service.events} rowLimit={6}/>
-                <ServiceSecurity incidents={service.security.incidents} firewall={service.security.firewall} vulnerabilityScan={service.security.vulnerabilityScan}/>
                 <ServiceResponsiveTime data={service.responseTimeHistory} />
+                <ServiceSecurity incidents={service.security.incidents} firewall={service.security.firewall} vulnerabilityScan={service.security.vulnerabilityScan}/>
             </BoxWrapper>
         </ServiceDetailWrapper>
     </>);

@@ -90,7 +90,7 @@ export const darkTheme = {
     button: {
       background: "#2F2F2F",    // tamnija siva pozadina dugmadi
       text: "#E0E0E0",          // svetla siva za tekst dugmadi
-      hover: "#444",            // siva koja se vidi na hoveru
+      hover: "#4444",            // siva koja se vidi na hoveru
       disabledBg: "#1A1A1A",    // dublje zatamnjeno dugme
       disabledText: "#666666",  // svetliji sivi tekst za disabled dugme
     },

@@ -15,7 +15,7 @@ export default function ServiceResponsiveTime({data}: ServiceResposiveTimeProps)
     
     <MainWrapper>
         <Paragraph>Response Time</Paragraph>
-        <ResponsiveTimeChart data={data} fontSize={12} color={theme.colors.primary} width={450} height={220}/>
+        <ResponsiveTimeChart data={data} fontSize={12} color={theme.colors.primary} width={'100%'} height={220}/>
     </MainWrapper>
     </>);
 }

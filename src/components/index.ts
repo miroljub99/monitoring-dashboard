@@ -16,3 +16,6 @@ export {default as ServiceStats} from './ServiceStats/ServiceStats';
 export {default as ServiceEvents} from './ServiceEvents/ServiceEvents';
 export {default as ServiceSecurity} from './ServiceSecurity/ServiceSecurity';
 export {default as ServiceResponsiveTime} from './ServiceResponsiveTime/ServiceResposiveTime';
+export {default as Button} from './UI/Button/Button';
+export {default as Loading} from './UI/Loading/Loading';
+export {default as Error} from './UI/Error/Error';

@@ -1,70 +1,62 @@
 import styled from "@emotion/styled";
 
 
-export const CardWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+export const CardWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    padding:`${spacing(8)} ${spacing(6)}`,
+    width:'auto',
+    background:colors.surface,
+    border:`3px solid ${colors.border}`,
+    borderRadius:borderRadius.sm,
+}));
 
-    padding: 8px 0px;
 
-    width: auto;
-    background:${({theme})=>( theme.colors.surface)};
-    border: 3px solid ${({theme})=>( theme.colors.border)};
-    border-radius: ${({theme})=>( theme.borderRadius.sm)}
 
-`;
+export const HeaderSection = styled.div(({theme:{spacing}})=>({
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    gap:spacing(2),
+    flex:1,
+    maxWidth:400,
+    "> :nth-child(1)":{
+        flex:3,
+    },
+    '> :nth-child(2)':{
+        flex:2,
+    },
+    '> :nth-child(3)':{
+        flex:1,
+    }
+}));
 
-export const HeaderSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap:8px;
-    flex:1;
 
-    padding: 0px 23px;
-    
-    max-width: 400px;
+export const MetricSection = styled.div(({theme:{spacing}})=>({
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    gap:spacing(3),
+    flex:1,
+    maxWidth:320,
+}));
 
-    > :nth-child(1){
-        flex:3;
-     }
-    > :nth-child(2){
-        flex:2;
-     }
 
-    > :nth-child(3){
-        flex:1;
-     }
-`;
 
-export const MetricSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap:12px;
-    flex:1;
+export const TechnicalSection = styled.div(({theme:{spacing}})=>({
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    gap:spacing(3),
+    flex:1,
+    maxWidth:320,
+}));
 
-    padding: 0px 8px;
 
-    max-width: 320px;
-
-`;
-
-export const TechnicalSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex:1;
-
-    padding: 0px 23px;
-
-    max-width: 320px;
-`;
 
 
 

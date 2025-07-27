@@ -26,7 +26,7 @@ interface ResponseTimeHistory{
  * Represents the state and metadata of a monitored service.
  */
 export interface Service {
-    id: number;                      // Unique identifier of the service
+    id: string;                      // Unique identifier of the service
     name: string;                    // Name of the service
     version: string;                 // Service version number (e.g., '1.3.2')
     status: 'online' | 'offline' | 'degraded';  // Current operational status

@@ -13,7 +13,7 @@ export default function Dashboard(){
     useEffect(()=>{
 
        startPolling();
-
+       
        return ()=>{
         stopPolling();
        }
