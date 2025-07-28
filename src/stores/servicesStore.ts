@@ -16,6 +16,7 @@ export const useServicesStore = create<ServicesState>((set,get)=>({
     retryCount: 0,      //Indicates retry count
     lastFetched: null,  //Indicates fetched time
     isOffline: !navigator.onLine, // Indicates status offline or online
+    query:'',
 
 
     setServices:(newServices)=>{set({services:newServices});},   //Update services
@@ -25,6 +26,7 @@ export const useServicesStore = create<ServicesState>((set,get)=>({
     setRetryCount:(retryCount)=>{set({retryCount})},             //Update retryCount
     setLastFetched:(timestamp)=>{set({lastFetched:timestamp})},  //Update fetch time
     setIsOffline:(isOffline)=>{set({isOffline})},                //Update offline status
+    setQuery:(search) =>{set({query:search})},
     getServiceById:(id)=>{
         const {services} = get();
         return services.find(service => service.id === id);      //Get service by id

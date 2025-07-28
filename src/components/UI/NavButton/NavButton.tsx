@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import { ChevronDown,ChevronUp } from "lucide-react";
 import { ButtonWrapper,ContentWrapper } from "./NavButton.styled";
@@ -27,7 +27,8 @@ export default function NavButton(props:NavButtonProps){
     const {label,route,icon,collapsible,listItem = []} = props;
     const Icon = icon;
     const [isOpen,setIsOpen] = useState<boolean>(false);
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
+    const menuRef = useRef<HTMLDivElement>(null); 
 
     function handleClick(){
         if(collapsible){
@@ -38,20 +39,38 @@ export default function NavButton(props:NavButtonProps){
         }
     }
 
-    function handeListClick(id: number){
+    function handeListClick(id: string){
 
         navigate(`/service/${id}`);
     }
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            setIsOpen(false);
+            }
+        };
+
+        // Dodaj true kao treći argument (capture faza)
+        document.addEventListener('click', handleClickOutside, true);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    }, []);
+
     return(<>
-        <ButtonWrapper onClick={handleClick}>
-            <Icon size={32} strokeWidth={1}/><span>{label}</span>{collapsible && (isOpen ? <ChevronUp size={18}/>:<ChevronDown size={18}/>)}
-        </ButtonWrapper>
-        {collapsible && (
-            <ContentWrapper isOpen={isOpen}>
-                {(listItem as Service[]).map(item =>(
-                    <ButtonWrapper onClick={()=> handeListClick(item.id)}><span>{item.name}</span>{statusMap[item.status].emoji}</ButtonWrapper>
-                ))}
-            </ContentWrapper>
-        )}
+        <div ref={menuRef}>
+            <ButtonWrapper onClick={handleClick}>
+                <Icon size={32} strokeWidth={1}/><span>{label}</span>{collapsible && (isOpen ? <ChevronUp size={18}/>:<ChevronDown size={18}/>)}
+            </ButtonWrapper>
+            {collapsible && (
+                <ContentWrapper isOpen={isOpen}>
+                    {(listItem as Service[]).map(item =>(
+                        <ButtonWrapper onClick={()=> handeListClick(item.id)}><span>{item.name}</span>{statusMap[item.status].emoji}</ButtonWrapper>
+                    ))}
+                </ContentWrapper>
+            )}
+        </div>
     </>);
 }

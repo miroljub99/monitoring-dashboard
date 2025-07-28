@@ -7,7 +7,7 @@ export const lightTheme = {
     tertiary: "#ECEFF1",       // svetlija siva za pozadine
 
     background: "#F4F4F4",     // svetla pozadina
-    surface: "#FFFFFF",        // bela površina za kartice
+    surface: "#e3e3e3ff",        // bela površina za kartice
     text: "#1C1C1C",           // tamno siva za tekst
     textMuted: "#555555",      // svetlo siva za mutirani tekst
     border: "#E0E0E0",         // siva linija

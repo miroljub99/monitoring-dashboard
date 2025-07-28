@@ -19,3 +19,4 @@ export {default as ServiceResponsiveTime} from './ServiceResponsiveTime/ServiceR
 export {default as Button} from './UI/Button/Button';
 export {default as Loading} from './UI/Loading/Loading';
 export {default as Error} from './UI/Error/Error';
+export {default as Info} from './UI/Info/Info';

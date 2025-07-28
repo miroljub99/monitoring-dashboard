@@ -60,7 +60,7 @@ const NotificationWrapper = styled.div(({theme:{spacing,colors}})=>({
     }
 }));
 
-const Wrapper = styled.div(({theme})=>({
+const Wrapper = styled.div(({})=>({
     position:'relative',
 }));
 

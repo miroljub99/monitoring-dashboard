@@ -10,7 +10,6 @@ export default function ServiceDetail(){
     const {id} = useParams<string>();
     const service = services.find(s => s.id === id);
 
-    if(loading || !services.length) return <Loading label="Loading service details..."/>;
     if(error) return <Error label={error}/>;
     if(!service) return <Error label="Service not found"/>;
     

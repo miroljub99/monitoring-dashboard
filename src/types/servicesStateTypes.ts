@@ -12,6 +12,7 @@ export interface ServicesState {
     retryCount: number;                       //Count retry
     lastFetched: number | null;               //Fetched time
     isOffline: boolean;                       //Offline status
+    query: string;                            //Query state
 
     setServices: (newServices: Service[]) => void;   // Replace current services list
     setLoading: (loading: boolean) => void;         // Update loading state
@@ -20,8 +21,9 @@ export interface ServicesState {
     setRetryCount:(retryCount: number) => void;
     setLastFetched:(timestamp: number) => void;
     setIsOffline: (isOffline: boolean) => void;
+    setQuery: (query: string) => void;
     resetStore: ()=> void;
-    getServiceById:(id:number)=>Service | undefined;            // Get service by id itself
+    getServiceById:(id: string)=>Service | undefined;            // Get service by id itself
     fetchAndSetServices: ()=> Promise<void>;       // Fetch services from API and update store
     startPolling: ()=> void;                       // Start polling and set interval in intervalId
     stopPolling: ()=> void;                        // Stop interval and clear intervalId
