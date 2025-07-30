@@ -23,18 +23,19 @@ export default function SideBar(){
             </LogoWrapper>
             <NavWrapper>
                 <SideTopWrapper>
-                    {sideBarItemTop.map(item =>(
+                    {sideBarItemTop.map((item,index )=>(
                         <NavButton label={item.label}
                                    icon={item.icon}
                                    collapsible={item.collapsible || false}
                                    listItem={item.collapsible ? services : []}
                                    route={item.route}
+                                   key={index}
                         />
                     ))}
                 </SideTopWrapper>
                 <SideBottomWrapper>
-                    {sideBarItemBottom.map(item=>(
-                        <NavButton label={item.label} icon={item.icon} listItem={item.collapsible ? services : []} route={item.route}/>
+                    {sideBarItemBottom.map((item,index)=>(
+                        <NavButton key={index} label={item.label} icon={item.icon} listItem={item.collapsible ? services : []} route={item.route}/>
                     ))}
                 </SideBottomWrapper>
             </NavWrapper>

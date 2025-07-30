@@ -1,12 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import { useServicesStore } from "@/stores";
-import { ServiceOverview,ServiceMetrics,ServiceStats,ServiceEvents, ServiceSecurity,ServiceResponsiveTime,Loading,Error } from "@/components";
+import { ServiceOverview,ServiceMetrics,ServiceStats,ServiceEvents, ServiceSecurity,ServiceResponsiveTime,Error,Button } from "@/components";
 import styled from "@emotion/styled";
 
 export default function ServiceDetail(){
+
     const services = useServicesStore(state => state.services);
-    const loading = useServicesStore(state => state.loading);
     const error = useServicesStore(state => state.error);
+    const navigate = useNavigate();
     const {id} = useParams<string>();
     const service = services.find(s => s.id === id);
 
@@ -16,6 +17,7 @@ export default function ServiceDetail(){
     
     return(<>
         <ServiceDetailWrapper>
+            <Button onClick={()=> navigate('/dashboard')}>&lt; Back</Button>
             <ServiceOverview name={service.name} status={service.status} version={service.version} countryCode={service.countryCode}/>
             <BoxWrapper>
                 <ServiceMetrics cpu={service.cpu} memory={service.memory} responseTime={service.responseTime} />

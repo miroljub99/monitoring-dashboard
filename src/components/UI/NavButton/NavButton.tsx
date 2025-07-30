@@ -51,7 +51,6 @@ export default function NavButton(props:NavButtonProps){
             }
         };
 
-        // Dodaj true kao treći argument (capture faza)
         document.addEventListener('click', handleClickOutside, true);
 
         return () => {
@@ -62,12 +61,12 @@ export default function NavButton(props:NavButtonProps){
     return(<>
         <div ref={menuRef}>
             <ButtonWrapper onClick={handleClick}>
-                <Icon size={32} strokeWidth={1}/><span>{label}</span>{collapsible && (isOpen ? <ChevronUp size={18}/>:<ChevronDown size={18}/>)}
+                <Icon size={32} strokeWidth={1}/><span>{label}</span>{collapsible && (isOpen && listItem.length !== 0 ? <ChevronUp size={18}/>:<ChevronDown size={18}/>)}
             </ButtonWrapper>
             {collapsible && (
                 <ContentWrapper isOpen={isOpen}>
-                    {(listItem as Service[]).map(item =>(
-                        <ButtonWrapper onClick={()=> handeListClick(item.id)}><span>{item.name}</span>{statusMap[item.status].emoji}</ButtonWrapper>
+                    {(listItem as Service[]).map((item,index) =>(
+                        <ButtonWrapper key={index} onClick={()=> handeListClick(item.id)}><span>{item.name}</span>{statusMap[item.status].emoji}</ButtonWrapper>
                     ))}
                 </ContentWrapper>
             )}

@@ -22,13 +22,13 @@ export const HeaderSection = styled.div(({theme:{spacing}})=>({
     gap:spacing(2),
     flex:1,
     maxWidth:400,
-    "> :nth-child(1)":{
+    "> :nth-of-type(1)":{
         flex:3,
     },
-    '> :nth-child(2)':{
+    '> :nth-of-type(2)':{
         flex:2,
     },
-    '> :nth-child(3)':{
+    '> :nth-of-type(3)':{
         flex:1,
     }
 }));

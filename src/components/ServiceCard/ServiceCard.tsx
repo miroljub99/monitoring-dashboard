@@ -59,7 +59,7 @@ export default function ServiceCard(props:ServiceCardProps){
                     <Metric label={'Load'} value={load}/>
                     <Metric label={'Errors'} value={errors}/>
                 </TechnicalSection>
-                <Button size="md" onClick={handleClick}>Detail</Button>
+                <Button size="md"  onClick={handleClick}>Detail</Button>
             </CardWrapper>
     </>);
 }

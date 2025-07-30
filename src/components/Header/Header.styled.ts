@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div(({theme:{spacing}})=>({
     padding:`${spacing(4)} ${spacing(8)}`,
 }));
 
-export const LeftSection = styled.div(({theme})=>({
+export const LeftSection = styled.div(({})=>({
     flex:'1',
 }));
 

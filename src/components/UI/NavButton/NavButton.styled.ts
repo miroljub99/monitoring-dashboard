@@ -1,10 +1,12 @@
 import styled from "@emotion/styled"
 
-export const ButtonWrapper = styled.button(({theme:{spacing,colors}})=>({
+export const ButtonWrapper = styled.button(({theme:{spacing,colors,font}})=>({
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
     gap:`${spacing(3)}`,
+    fontFamily:font.family,
+    fontWeight:font.weight.medium,
     width:'100%',
     background:'none',
     border:'none',

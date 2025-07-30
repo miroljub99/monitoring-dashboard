@@ -74,6 +74,7 @@ export const useServicesStore = create<ServicesState>((set,get)=>({
         isOffline: get().isOffline,
     }),
     resetStore: ()=>{
+        get().stopPolling();
         set({
             services: [],
             loading: false,

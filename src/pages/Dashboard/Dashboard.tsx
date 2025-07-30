@@ -1,4 +1,4 @@
-import { ServiceList,ServiceDetail } from "@/container";
+import { ServiceDetail,ServiceContainer } from "@/container";
 import { DashboardLayout,SideBarLayout,ContentAreaLayout,NavBarLayout,MainLayout} from "./Dashboard.styled";
 import { useServicesStore } from "@/stores";
 import {SideBar,Header} from '@/components';
@@ -31,7 +31,7 @@ export default function Dashboard(){
             <MainLayout>
                 <Routes>
                     <Route path="/" />
-                    <Route path="/dashboard" element={<ServiceList/>}/>
+                    <Route path="/dashboard" element={<ServiceContainer/>}/>
                     <Route path='/service/:id' element={<ServiceDetail/>}/>
                 </Routes>
             </MainLayout>
