@@ -28,7 +28,7 @@ const MainWrapper = styled.div(({})=>({
 
 }));
 
-const ErrorWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+const ErrorWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
@@ -38,5 +38,6 @@ const ErrorWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
     border:`2px solid ${colors.error}`,
     borderRadius: borderRadius.sm,
     background:colors.surface,
+    boxShadow:shadow.md,
 
 }));

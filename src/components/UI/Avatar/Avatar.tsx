@@ -7,7 +7,7 @@ interface AvatarProps{
     size?: number;
 }
 
-export default function Avatar({src = user,alt = 'Avatar',size = 48}:AvatarProps){
+export default function Avatar({src = user,alt = 'Avatar',size = 42}:AvatarProps){
     return <StyledAvatar src={src} alt={alt} size={size} />
 };
 

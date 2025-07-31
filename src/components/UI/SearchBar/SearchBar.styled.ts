@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
-export const InputWrapper = styled.div(({theme:{spacing}})=>({
+export const InputWrapper = styled.div(({theme:{spacing,shadow}})=>({
     userSelect:'none',
     position:'relative',
     width:'100%',
     minWidth:'0',
     maxWidth:spacing(120),
     outline:'none',
+    boxShadow: shadow.sm,
 }));
 
 export const StyledInput = styled.input(({theme:{spacing,font,colors,borderRadius}})=>({

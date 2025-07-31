@@ -22,7 +22,7 @@ export default function Button(props:ButtonProps){
     </>);
 }
 
-const ButtonWrapper = styled.button<{padding: string}>(({theme:{colors,font},padding})=>({
+const ButtonWrapper = styled.button<{padding: string}>(({theme:{colors,font,shadow},padding})=>({
     maxHeight: 'fit-content',                           
     alignSelf: 'flex-start',   
     padding:padding,
@@ -34,8 +34,10 @@ const ButtonWrapper = styled.button<{padding: string}>(({theme:{colors,font},pad
     whiteSpace: 'nowrap',
     cursor:'pointer',
     transition: `background-color 0.2s ease`,
+    boxShadow:shadow.sm,
     '&: hover':{
-        background: colors.button.hover
+        background: colors.button.hoverBtn,
+        boxShadow:shadow.sm,
     },
     '&: disable':{
         background: colors.button.disabledBg,

@@ -1,7 +1,7 @@
 import { type Service } from "../types";
 import axios from "axios";
 
-const api = "http://localhost:4000/services";
+export const api = "http://localhost:4000/services";
 
 
 /**
@@ -25,6 +25,6 @@ export async function fetchServices(){
        }else {
         console.error('Unknow error: ', error);
     };
-        return null;
+        throw error;
     }
 }

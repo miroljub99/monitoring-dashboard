@@ -19,11 +19,13 @@ export default function ServiceSecurity(props:ServiceSecurityProps){
     </>);
 }
 
-const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing}})=>({
+const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing,shadow}})=>({
     display:'flex',
     flexDirection:'column',
     justifyContent:'space-between',
     background:colors.surface,
     borderRadius: borderRadius.lg,
-    padding:`${spacing(12)} ${spacing(6)}`
+    padding:`${spacing(12)} ${spacing(6)}`,
+    border: `1px solid ${colors.border}`,
+    boxShadow: shadow.md,
 }));

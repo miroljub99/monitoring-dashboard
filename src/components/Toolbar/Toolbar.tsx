@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import {Button,Paragraph} from '@/components';
 import { useServicesStore } from "@/stores";
+import { api } from "@/api";
 
 
 function formatTime(timestamp: number): string {
@@ -9,6 +10,7 @@ function formatTime(timestamp: number): string {
 }
 
 export default function Toolbar(){
+    const services = useServicesStore(state => state.services)
     const refresh = useServicesStore(state => state.fetchAndSetServices);
     const clearStore = useServicesStore(state => state.resetStore);
     const startPolling = useServicesStore(state => state.startPolling);
@@ -16,7 +18,8 @@ export default function Toolbar(){
     const isPolling = useServicesStore(state => state.isPolling);
     const lastFetched = useServicesStore(state => state.lastFetched);
     const error = useServicesStore(state => state.error);
-    const isOffline = useServicesStore(state => state.isOffline);
+    const retry = useServicesStore(state => state.retryCount);
+    const setRetry = useServicesStore(state => state.setRetryCount);
 
     function handlePolling(){
         if(isPolling){
@@ -28,26 +31,47 @@ export default function Toolbar(){
 
     return(<>
     <ToolbarWrapper>
-        <AboveSide>
-            <Paragraph>Polling: {isPolling ? '🟢 ON':'🔴 OFF'}</Paragraph>
-            <Paragraph>Last Fetched: {lastFetched ? formatTime(lastFetched):'N/A'}</Paragraph>
-        </AboveSide>
-        <BelowSide>
-            <Button size="lg" onClick={refresh}>Refresh</Button>
-            <Button size="lg" onClick={handlePolling}>{isPolling ? 'Stop Polling': 'Start Polling'}</Button>
-        </BelowSide>
+        <BoxWrapper>    
+            <AboveSide>
+                <Paragraph>Polling: {isPolling ? '🟢 ON':'🔴 OFF'}</Paragraph>
+                <Paragraph>Last Fetched: {lastFetched ? formatTime(lastFetched):'N/A'}</Paragraph>
+            </AboveSide>
+            <BelowSide>
+                <Button size="lg" onClick={refresh}>Refresh</Button>
+                <Button size="lg" onClick={handlePolling}>{isPolling ? 'Stop Polling': 'Start Polling'}</Button>
+            </BelowSide>
+        </BoxWrapper>
+        <BoxWrapper>
+            <AboveSide>
+                <Paragraph>Total Services: {services.length}</Paragraph>
+                <Paragraph>Api Endpoints: {api}</Paragraph>
+            </AboveSide>
+            <BelowSide>
+                <Button size="lg" onClick={clearStore}>Clear Store</Button>
+            </BelowSide>
+        </BoxWrapper>
+        <BoxWrapper>
+            <AboveSide>
+                <Paragraph>Retry Attempts: {retry}</Paragraph>
+                <Paragraph>Errors: {error ? error: 'No errors'}</Paragraph>
+            </AboveSide>
+            <BelowSide>
+                <Button size="lg" onClick={()=> setRetry(0)}>Reset Retry</Button>
+            </BelowSide>
+        </BoxWrapper>
     </ToolbarWrapper>
     </>);
 }
 
-const ToolbarWrapper = styled.div(({theme:{colors,spacing,borderRadius}})=>({
+const ToolbarWrapper = styled.div(({theme:{colors,spacing,borderRadius,shadow}})=>({
     display:'flex',
-    flexDirection:'column',
+    flexDirection:'row',
     gap:spacing(4),
     padding:`${spacing(6)} ${spacing(4)}`,
     borderRadius:borderRadius.md,
     background:colors.background,
-    border:`1px solid ${colors.border}`
+    border:`1px solid ${colors.border}`,
+    boxShadow: shadow.md,
 }));
 
 const BelowSide = styled.div(({theme:{spacing}})=>({
@@ -61,4 +85,15 @@ const AboveSide = styled.div(({theme:{spacing}})=>({
     flexDirection:'column',
     gap:spacing(2),
     
+}));
+
+const BoxWrapper = styled.div(({theme:{spacing,borderRadius,colors,shadow}})=>({
+    display:'flex',
+    flexDirection:'column',
+    gap:spacing(4),
+    padding:`${spacing(6)} ${spacing(4)}`,
+    borderRadius:borderRadius.md,
+    background:colors.surface,
+    border:`1px solid ${colors.border}`,
+    boxShadow:shadow.sm,
 }));

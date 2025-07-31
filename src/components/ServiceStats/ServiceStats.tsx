@@ -19,7 +19,7 @@ export default function ServiceStats(props: ServiceStatsProps){
     </>);
 }
 
-const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
@@ -28,4 +28,6 @@ const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
     padding:`${spacing(2)} ${spacing(4)}`,
     background:colors.surface,
     borderRadius:borderRadius.lg,
+    border: `1px solid ${colors.border}`,
+    boxShadow: shadow.md,
 }));

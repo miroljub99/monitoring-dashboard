@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
 
 
-export const CardWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+export const CardWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
     display:'flex',
     flexDirection:'row',
     justifyContent:'space-between',
     padding:`${spacing(8)} ${spacing(6)}`,
     width:'auto',
     background:colors.surface,
-    border:`3px solid ${colors.border}`,
+    border:`2px solid ${colors.border}`,
     borderRadius:borderRadius.sm,
+    boxShadow:shadow.md,
 }));
 
 

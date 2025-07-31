@@ -1,33 +1,34 @@
 export const lightTheme = {
   mode: "light",
 
-  colors: {
-    primary: "#607D8B",        // siva - slate-500
-    secondary: "#37474F",      // tamno siva - blue-grey
-    tertiary: "#ECEFF1",       // svetlija siva za pozadine
+    colors: {
+    primary: "#3F51B5",           
+    secondary: "#455A64",         
+    tertiary: "#F5F7FA",          
 
-    background: "#F4F4F4",     // svetla pozadina
-    surface: "#e3e3e3ff",        // bela površina za kartice
-    text: "#1C1C1C",           // tamno siva za tekst
-    textMuted: "#555555",      // svetlo siva za mutirani tekst
-    border: "#E0E0E0",         // siva linija
+    background: "#e6e7e9ff",        
+    surface: "#e1e1e1ff",           
+    text: "#1E1E1E",              
+    textMuted: "#6C757D",         
+    border: "#D0D7DE",           
 
-    success: "#43A047",        // zelena
-    error: "#E53935",          // crvena
-    warning: "#FB8C00",        // žuta
+    success: "#4CAF50",          
+    error: "#D32F2F",             
+    warning: "#FFA000",           
 
     button: {
-      background: "#DADADA",   // siva pozadina dugmadi
-      text: "#1C1C1C",         // tamno sivi tekst na dugmadi
-      hover: "#C0C0C0",        // tamnija siva kad se hoveruje
-      disabledBg: "#E8E8E8",   // svetlija siva za disabled
-      disabledText: "#9A9A9A", // još svetliji sivi tekst za disabled dugme
+      background: "#3F51B5",      
+      text: "#FFFFFF",            
+      hover: "#CCCCCC",           
+      disabledBg: "#CCCCCC",      
+      disabledText: "#CCCCCC",
+      hoverBtn:"#5C6BC0",    
     },
 
     scrollbar: {
-      track: "#f0f0f0",        // svetla boja za scrollbar track
-      thumb: "#b0b0b0",        // tamno siva boja thumb-a
-      thumbHover: "#888888",   // još tamnija boja thumb-a pri hover-u
+      track: "#F0F2F5",           
+      thumb: "#C0C0C0",
+      thumbHover: "#A0A0A0",
     },
   },
 
@@ -73,32 +74,33 @@ export const darkTheme = {
   mode: "dark",
 
   colors: {
-    primary: "#90A4AE",        // svetlija siva boja (slična slate-400)
-    secondary: "#B0BEC5",      // još svetlija siva boja (slična slate-300)
-    tertiary: "#263238",       // tamna siva za pozadinu
+    primary: "#5C6BC0",        
+    secondary: "#B0BEC5",      
+    tertiary: "#263238",       
 
-    background: "#121212",     // tamna pozadina
-    surface: "#1E1E1E",        // tamnija površina za kartice
-    text: "#E0E0E0",           // svetla siva za tekst
-    textMuted: "#9E9E9E",      // još svetliji tekst za sekundarni tekst
-    border: "#2C2C2C",         // tamna siva linija
+    background: "#121212",     
+    surface: "#1E1E1E",        
+    text: "#E0E0E0",           
+    textMuted: "#9E9E9E",      
+    border: "#2C2C2C",         
 
-    success: "#66BB6A",        // zelena
-    error: "#EF5350",          // crvena
-    warning: "#FFA726",        // žuta
+    success: "#66BB6A",        
+    error: "#EF5350",          
+    warning: "#FFA726",        
 
     button: {
-      background: "#2F2F2F",    // tamnija siva pozadina dugmadi
-      text: "#E0E0E0",          // svetla siva za tekst dugmadi
-      hover: "#4444",            // siva koja se vidi na hoveru
-      disabledBg: "#1A1A1A",    // dublje zatamnjeno dugme
-      disabledText: "#666666",  // svetliji sivi tekst za disabled dugme
+      background: "#5C6BC0",    
+      text: "#E0E0E0",          
+      hover: "#4c4c4cff",           
+      disabledBg: "#1A1A1A",    
+      disabledText: "#666666",  
+      hoverBtn:"#7986CB",
     },
 
     scrollbar: {
-      track: "#1A1A1A",         // tamna pozadina scrollbar-a
-      thumb: "#444",            // tamniji thumb
-      thumbHover: "#666",       // još tamniji thumb na hover
+      track: "#1A1A1A",         
+      thumb: "#444",            
+      thumbHover: "#666",       
     },
   },
 };

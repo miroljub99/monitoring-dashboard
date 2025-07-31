@@ -30,7 +30,7 @@ export default function MainInformation({name,status,version,countryCode}:MainIn
     </>);
 }
 
-const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
     display:'flex',
     flexDirection:'row',
     justifyContent:'space-between',
@@ -38,6 +38,8 @@ const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
     padding:`${spacing(4)} ${spacing(12)}`,
     background:colors.surface,
     borderRadius:borderRadius.lg,
+    border:`1px solid ${colors.border}`,
+    boxShadow: shadow.md,
 }));
 const LeftSection = styled.div(({theme:{spacing}})=>({
     display:'flex',

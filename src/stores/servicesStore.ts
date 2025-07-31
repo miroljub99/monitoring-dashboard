@@ -39,7 +39,8 @@ export const useServicesStore = create<ServicesState>((set,get)=>({
 
         try {
             const data = await fetchServices();
-            setServices(data || []);
+            if(!data) throw new Error("No data received");
+            setServices(data);
             setRetryCount(0);
             setLastFetched(Date.now());    
         } catch (error) {
@@ -49,7 +50,7 @@ export const useServicesStore = create<ServicesState>((set,get)=>({
 
              if (newRetry >= 3) {
                 stopPolling();
-                console.warn('Polling stopped due to repeated failures.');
+                setError('Polling stopped due to repeated failures.');
             }
         } finally {
             setLoading(false);

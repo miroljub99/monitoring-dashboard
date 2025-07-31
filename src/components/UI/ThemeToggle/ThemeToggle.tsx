@@ -13,7 +13,7 @@ export default function ThemeToggle(){
     </>);
 }
 
-const ToggleWrapper = styled.div(({theme:{colors,spacing}})=>({
+const ToggleWrapper = styled.div(({theme:{colors,spacing,shadow}})=>({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -23,6 +23,7 @@ const ToggleWrapper = styled.div(({theme:{colors,spacing}})=>({
     cursor:'pointer',
     transition:'background-color 0.2s ease',
     ':hover':{
-        background:colors.button.hover
+        background:colors.button.hover,
+        boxShadow: shadow.md,
     }
 }));

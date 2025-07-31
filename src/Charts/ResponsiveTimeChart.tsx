@@ -16,7 +16,7 @@ export default function ResponsiveTimeChart({data,color,fontSize,height,width}:R
                 <CartesianGrid strokeDasharray="5 5" />
                 <XAxis dataKey='timestamp' tick={{fontSize:`${fontSize}`}}/>
                 <YAxis/>
-                <Tooltip />
+                <Tooltip labelStyle={{color:'black'}}/>
                 <Bar dataKey='value' fill={color} animationDuration={600} animationBegin={300}/>
             </BarChart>
         </ResponsiveContainer>

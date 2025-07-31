@@ -21,10 +21,10 @@ export const LogoWrapper = styled.div(({theme:{spacing,colors}})=>({
     gap:`${spacing(2)}`,
     height:`${spacing(16)}`,
     padding:`${spacing(2)} ${spacing(4)}`,
-    borderBottom:`2px solid ${colors.border}`,
+    color: colors.primary,
 }));
 
-export const NavWrapper = styled.div(({theme})=>({
+export const NavWrapper = styled.div(({})=>({
     flex:'2',
     display:'flex',
     flexDirection: 'column',
@@ -32,10 +32,10 @@ export const NavWrapper = styled.div(({theme})=>({
 
 }));
 
-export const SideTopWrapper = styled.div(({theme})=>({
+export const SideTopWrapper = styled.div(({})=>({
 
 }));
 
-export const SideBottomWrapper = styled.div(({theme})=>({
+export const SideBottomWrapper = styled.div(({})=>({
 
 }));

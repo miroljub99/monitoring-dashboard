@@ -28,7 +28,7 @@ const MainWrapper = styled.div(({})=>({
 
 }));
 
-const InfoWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+const InfoWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
@@ -38,5 +38,6 @@ const InfoWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
     border:`2px solid ${colors.border}`,
     borderRadius: borderRadius.sm,
     background:colors.surface,
+    boxShadow:shadow.sm,
 
 }));

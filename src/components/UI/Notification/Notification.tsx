@@ -46,7 +46,7 @@ export default function Notification(){
     </>);
 }
 
-const NotificationWrapper = styled.div(({theme:{spacing,colors}})=>({
+const NotificationWrapper = styled.div(({theme:{spacing,colors,shadow}})=>({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -56,7 +56,8 @@ const NotificationWrapper = styled.div(({theme:{spacing,colors}})=>({
     cursor:'pointer',
     transition:'background-color 0.2s ease',
     ':hover':{
-        background:colors.button.hover
+        background:colors.button.hover,
+        boxShadow:shadow.md,
     }
 }));
 
@@ -64,7 +65,7 @@ const Wrapper = styled.div(({})=>({
     position:'relative',
 }));
 
-export const DropDownMenu = styled.div(({theme:{spacing,colors}})=>({
+export const DropDownMenu = styled.div(({theme:{spacing,colors,shadow}})=>({
     position:'absolute',
     top:`calc(100% + 8px)`,
     right:`10%`,
@@ -79,6 +80,7 @@ export const DropDownMenu = styled.div(({theme:{spacing,colors}})=>({
     padding:`${spacing(5)}`,
     background:colors.surface,
     border:`1px solid ${colors.border}`,
+    boxShadow: shadow.sm,
 }));
 
 export const Divider = styled.div(({theme:{colors,spacing}})=>({

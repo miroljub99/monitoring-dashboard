@@ -20,7 +20,7 @@ const Spinner = styled.div(({theme:{colors}})=>({
     width:32,
     height:32,
     border:`4px solid ${colors.border}`,
-    borderTop:`4px solid ${colors.text}`,
+    borderTop:`4px solid ${colors.primary}`,
     borderRadius: '50%',
     animation:`spin 1s linear infinite`,
 
@@ -31,7 +31,7 @@ const Spinner = styled.div(({theme:{colors}})=>({
 
 }));
 
-const LoadingWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
+const LoadingWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
@@ -40,6 +40,7 @@ const LoadingWrapper = styled.div(({theme:{spacing,colors,borderRadius}})=>({
     border:`2px solid ${colors.border}`,
     borderRadius: borderRadius.sm,
     background:colors.surface,
+    boxShadow:shadow.md,
 }));
 
 const MainWrapper = styled.div(({})=>({

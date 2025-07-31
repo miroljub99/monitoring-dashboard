@@ -56,6 +56,7 @@ export default function GlobalStyles() {
 
           &:hover {
             background-color: ${theme.colors.button.hover};
+            box-shadow: ${theme.shadow.md};
           }
 
           &:disabled {
