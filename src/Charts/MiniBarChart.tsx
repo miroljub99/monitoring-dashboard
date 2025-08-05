@@ -67,7 +67,7 @@ const LabelWrappper = styled.div(({})=>({
     width:'100%',
 }));
 
-const MainWrapper = styled.div<{width?:number,height?:number}>(({width,height,theme:{spacing}})=>({
+const MainWrapper = styled.div<{width?:number,height?:number}>(({theme:{spacing}})=>({
     display:'flex',
     flexDirection:'column',
     gap:spacing(1),

@@ -14,9 +14,12 @@ export const LeftSection = styled.div(({})=>({
     flex:'1',
 }));
 
-export const RightSection = styled.div(({theme:{spacing}})=>({
+export const RightSection = styled.div(({theme:{spacing,media}})=>({
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
     gap:spacing(4),
+    [media.desktop]:{
+        gap:spacing(1),
+    },
 }));

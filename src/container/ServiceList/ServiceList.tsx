@@ -55,7 +55,7 @@ export default function ServiceList(){
                 : filtered.length > 0 
                     ? filtered.map(service => (
                     <ServiceCard key={service.id} {...mapToCardProps(service)} />))
-                    : <Info label="No Result"/>
+                    : <Info label="No Result" isIcon={true}/>
             }
         </ServiceListWrapper>
     </>);

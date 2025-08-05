@@ -30,12 +30,22 @@ export const lightTheme = {
       thumb: "#C0C0C0",
       thumbHover: "#A0A0A0",
     },
+
+  },
+
+  media:{
+      desktop: '@media (max-width: 1440px)',
+      laptop:  '@media (max-width: 1024px)',
+      tablet:  '@media (max-width: 768px)',
+      mobileL: '@media (max-width: 425px)',
+      mobileM: '@media (max-width: 375px)',
+      mobileS: '@media (max-width: 320px)',
   },
 
   font: {
     family: `'Space Grotesk', sans-serif`,
     size: {
-      h1: "32px",
+      h1: "36px",
       h2: "28px",
       h3: "20px",
       paragraph: "16px",
@@ -50,7 +60,7 @@ export const lightTheme = {
       h1: "40px",
       h2: "32px",
       h3: "24px",
-      paragraph: "20px",
+      paragraph: "22px",
       caption: "16px",
     },
   },

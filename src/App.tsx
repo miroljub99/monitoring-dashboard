@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
-import { Dashboard } from './pages'
+import { Dashboard,PageNotFound } from './pages'
 import { useServicesStore } from './stores';
+import { Routes,Route } from 'react-router-dom';
+import { ServiceDetail,ServiceContainer } from "@/container";
+import {Home} from "@/pages";
+import {Info} from '@/components';
 
 export default function App() {
   //Check online status
@@ -19,7 +23,16 @@ export default function App() {
 
   return (
     <>
-      <Dashboard/>
+      <Routes>
+        <Route path="/" element={<Dashboard/>}>
+            <Route path="" element={<Home/>}/>
+            <Route path="dashboard" element={<ServiceContainer/>}/>
+            <Route path='service/:id' element={<ServiceDetail/>}/>
+            <Route path="settings" element={<Info label="Comming Soon"/>}/>
+            <Route path="support" element={<Info label="Comming Soon"/>}/>
+        </Route>
+        <Route path='*' element={<PageNotFound/>}/>
+      </Routes>
     </>
   )
 };

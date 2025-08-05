@@ -24,7 +24,7 @@ export default function Button(props:ButtonProps){
 
 const ButtonWrapper = styled.button<{padding: string}>(({theme:{colors,font,shadow},padding})=>({
     maxHeight: 'fit-content',                           
-    alignSelf: 'flex-start',   
+    alignSelf: 'center',   
     padding:padding,
     color: colors.button.text,
     fontFamily: font.family,

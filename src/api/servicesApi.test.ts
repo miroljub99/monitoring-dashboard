@@ -7,7 +7,7 @@ jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 const mockService: Service = {
-  id: 1,
+  id: "1",
   name: "Monitoring Service",
   version: "1.0.0",
   status: "online",
@@ -30,6 +30,28 @@ const mockService: Service = {
     firewall: "enabled",
     vulnerabilityScan: "clean",
   },
+  "responseTimeHistory": [
+        {
+          "timestamp": "2025-06-30T12:00:00Z",
+          "value": 105
+        },
+        {
+          "timestamp": "2025-07-01T12:00:00Z",
+          "value": 60
+        },
+        {
+          "timestamp": "2025-07-02T12:00:00Z",
+          "value": 78
+        },
+        {
+          "timestamp": "2025-07-03T12:00:00Z",
+          "value": 92
+        },
+        {
+          "timestamp": "2025-07-04T12:00:00Z",
+          "value": 52
+        }
+      ]
 };
 
 describe('fetchServices',()=>{

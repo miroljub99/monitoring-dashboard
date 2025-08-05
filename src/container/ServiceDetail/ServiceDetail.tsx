@@ -37,6 +37,9 @@ const ServiceDetailWrapper = styled.div(({theme:{spacing}})=>({
     display:'flex',
     flexDirection:'column',
     gap:spacing(6),
+    'button':{
+        width:'100%',
+    }
 }));
 
 const BoxWrapper = styled.div(({theme:{spacing}})=>({

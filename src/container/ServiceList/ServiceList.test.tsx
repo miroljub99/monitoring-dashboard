@@ -1,8 +1,9 @@
-import { render,screen, } from "@testing-library/react";
+import { screen, } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import ServiceList from "./ServiceList";
 import { useServicesStore } from "@/stores";
 import { mockService } from "@/_mocks_/servicesMocks";
+import { renderWithProviders } from '@/test-utils';
 
 
 jest.mock('@/stores',()=>({
@@ -17,11 +18,13 @@ describe('ServiceList ',()=>{
                 services: [],
                 loading: true,
                 error: null,
-                fetchAndSetServices: jest.fn()
+                fetchAndSetServices: jest.fn(),
+                query: "",
+                setQuery: jest.fn(),
             })
         );
 
-        render(<ServiceList/>);
+        renderWithProviders(<ServiceList/>);
 
         expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
     });
@@ -32,10 +35,12 @@ describe('ServiceList ',()=>{
                 services:[],
                 loading:false,
                 error: 'Something get wrong',
-                fetchAndSetServices: jest.fn()
+                fetchAndSetServices: jest.fn(),
+                query: "",
+                setQuery: jest.fn(),
             }));
 
-        render(<ServiceList/>);
+        renderWithProviders(<ServiceList/>);
 
         expect(screen.getByText(/Something get wrong/i)).toBeInTheDocument();
     });
@@ -46,11 +51,13 @@ describe('ServiceList ',()=>{
             services: [],
             loading: false,
             error: null,
-            fetchAndSetServices: jest.fn()
+            fetchAndSetServices: jest.fn(),
+            query: "",
+            setQuery: jest.fn(),
             })
         );
 
-        render(<ServiceList />);
+        renderWithProviders(<ServiceList/>);
         expect(screen.getByText(/No services available/i)).toBeInTheDocument();
     });
     it("renders service cards when services are available", () => {
@@ -60,11 +67,13 @@ describe('ServiceList ',()=>{
             services: [mockService],
             loading: false,
             error: null,
-            fetchAndSetServices: jest.fn()
+            fetchAndSetServices: jest.fn(),
+            query: "",
+            setQuery: jest.fn(),
             })
         );
 
-        render(<ServiceList />);
+        renderWithProviders(<ServiceList/>);
         expect(screen.getByText(/Monitoring Service/i)).toBeInTheDocument();
     });
 

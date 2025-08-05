@@ -2,7 +2,7 @@ import type { ServiceCardProps } from '@/components/ServiceCard/ServiceCard';
 
 
 export const mockCardProps: ServiceCardProps = {
-  id: 1,
+  id: "1",
   name: 'Monitoring Service',
   status: 'online',
   responseTime: 200,

@@ -4,6 +4,7 @@ import {Metric,StatusBadge} from "../index";
 import { CardWrapper,HeaderSection,MetricSection,TechnicalSection } from "./ServiceCard.styled";
 import { Heading3,Caption,Button } from "../index";
 import { useNavigate } from "react-router-dom";
+import { Cpu, MemoryStick, Timer, Activity, BarChart,AlertCircle} from "lucide-react";
 
 /**
  * Props for the ServiceCard component
@@ -49,15 +50,15 @@ export default function ServiceCard(props:ServiceCardProps){
                 </HeaderSection>
                 {/* Metric section*/}
                 <MetricSection>
-                    <Metric label={'CPU'} value={cpu}/>
-                    <Metric label={'Memory'} value={memory}/>
-                    <Metric label={'Resp. time'} value={responseTime}/>
+                    <Metric icon={Cpu} value={cpu} unit="%"/>
+                    <Metric icon={MemoryStick} value={memory} unit="Mb"/>
+                    <Metric icon={Timer} value={responseTime} unit="ms"/>
                 </MetricSection>
                 {/* Technical section */}
                 <TechnicalSection>
-                    <Metric label={'Up Time'} value={uptime}/>
-                    <Metric label={'Load'} value={load}/>
-                    <Metric label={'Errors'} value={errors}/>
+                    <Metric icon={Activity} value={uptime} unit="%"/>
+                    <Metric icon={BarChart} value={load} unit=""/>
+                    <Metric icon={AlertCircle} value={errors} unit=" err"/>
                 </TechnicalSection>
                 <Button size="md"  onClick={handleClick}>Detail</Button>
             </CardWrapper>

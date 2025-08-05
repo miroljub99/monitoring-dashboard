@@ -3,14 +3,15 @@ import { SearchX } from "lucide-react";
 
 interface InfoProps{
     label: string;
+    isIcon?: boolean;
 }
 
-export default function Infp({label}:InfoProps){
+export default function Info({label,isIcon = false}:InfoProps){
 
     return(<>
     <MainWrapper>
         <InfoWrapper>
-            <SearchX size={32}/>
+            {isIcon && <SearchX size={32}/> }
             {label}
         </InfoWrapper>
     </MainWrapper>

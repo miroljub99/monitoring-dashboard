@@ -7,7 +7,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": ".",
-    "types": ["@emotion/react","node"],
+    "types": ["@emotion/react","node","jest"],
     "paths": {
       "@/*": ["src/*"]
     },

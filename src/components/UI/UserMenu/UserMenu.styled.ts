@@ -38,7 +38,7 @@ export const Divider = styled.div(({theme:{colors,spacing}})=>({
 
 }));
 
-export const Wrapper = styled.div(({theme})=>({
+export const Wrapper = styled.div(({})=>({
     position:'relative',
     display:'flex',
     flexDirection:'row',

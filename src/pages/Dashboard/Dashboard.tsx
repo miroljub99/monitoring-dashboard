@@ -1,9 +1,9 @@
-import { ServiceDetail,ServiceContainer } from "@/container";
 import { DashboardLayout,SideBarLayout,ContentAreaLayout,NavBarLayout,MainLayout} from "./Dashboard.styled";
 import { useServicesStore } from "@/stores";
 import {SideBar,Header} from '@/components';
-import { Routes,Route } from 'react-router-dom';
 import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+
 
 export default function Dashboard(){
 
@@ -29,11 +29,7 @@ export default function Dashboard(){
                 <Header/>
             </NavBarLayout>
             <MainLayout>
-                <Routes>
-                    <Route path="/" />
-                    <Route path="/dashboard" element={<ServiceContainer/>}/>
-                    <Route path='/service/:id' element={<ServiceDetail/>}/>
-                </Routes>
+                <Outlet/>
             </MainLayout>
         </ContentAreaLayout>
     </DashboardLayout>

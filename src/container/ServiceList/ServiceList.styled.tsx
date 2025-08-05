@@ -6,6 +6,7 @@ export const ServiceListWrapper =  styled.div`
     flex-direction: column;
     gap: 12px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 24px 12px;
     width: auto;
     border: 1px solid ${({theme})=>( theme.colors.border)};
