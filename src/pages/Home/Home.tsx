@@ -21,7 +21,7 @@ export default function Home(){
             <FeaturesList>
                 <li>Real-time service status cards (CPU, memory, response time, uptime, errors)</li>
                 <li>Detailed and expandable technical view per service</li>
-                <li>Responsive UI: optimized for desktop and tablet screens</li>
+                <li>Responsive UI: optimized for desktop screen</li>
                 <li>“Coming soon” features: Settings and Support</li>
                 <li>Built with React, Zustand, Emotion, Axios, Jest</li>
             </FeaturesList>

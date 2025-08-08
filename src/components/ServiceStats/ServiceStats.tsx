@@ -12,9 +12,9 @@ export default function ServiceStats(props: ServiceStatsProps){
 
     return(<>
     <MainWrapper>
-        <MiniBarChart label="UpTime" value={uptime} unit=" %" maxValue={100}  height={16} invert={true}/>
-        <MiniBarChart label="Load" value={load} maxValue={2}  height={16} threshold={{green:50,orange:80,red:100}}/>
-        <MiniBarChart label="Errors" value={errors} maxValue={20} height={16} threshold={{green:1,orange:10,red:100}}/>
+        <MiniBarChart label="UpTime" value={uptime} unit=" %" maxValue={100}  height={16} invert={true} minWidth={200}/>
+        <MiniBarChart label="Load" value={load} maxValue={2}  height={16} threshold={{green:50,orange:80,red:100}} minWidth={200}/>
+        <MiniBarChart label="Errors" value={errors} maxValue={20} height={16} threshold={{green:1,orange:10,red:100}} minWidth={200}/>
     </MainWrapper>
     </>);
 }

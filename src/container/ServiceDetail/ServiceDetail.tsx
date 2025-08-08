@@ -37,15 +37,23 @@ const ServiceDetailWrapper = styled.div(({theme:{spacing}})=>({
     display:'flex',
     flexDirection:'column',
     gap:spacing(6),
+    height:'100%',
+    minHeight:0,
+    padding:`0 ${spacing(6)}`,
+    overflow:'hidden',
+    overflowY:'scroll',
     'button':{
         width:'100%',
     }
 }));
 
-const BoxWrapper = styled.div(({theme:{spacing}})=>({
+const BoxWrapper = styled.div(({theme:{spacing,media}})=>({
     display:'flex',
     flexDirection:'row',
     width:'100%',
-    minHeight:0,
+    minWidth:0,
     gap:spacing(6),
+    [media.laptop]:{
+        flexWrap:'wrap',
+    }
 }));

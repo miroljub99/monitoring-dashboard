@@ -20,13 +20,19 @@ export default function ServiceMetrics(props:ServiceMetricsProps){
     </>);
 }
 
-const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
+const MainWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow,media}})=>({
     display:'flex',
     flexDirection:'row',
-    gap:spacing(8),
-    padding:`${spacing(4)} ${spacing(12)}`,
+    justifyContent:'space-between',
+    alignItems:'center',
+    width:'fit-content',
+    padding:`${spacing(4)} ${spacing(4)}`,
     background:colors.surface,
     borderRadius:borderRadius.lg,
     border: `1px solid ${colors.border}`,
     boxShadow: shadow.md,
+    [media.laptop]:{
+        width:'100%',
+        flexWrap:'wrap',
+    }
 }));

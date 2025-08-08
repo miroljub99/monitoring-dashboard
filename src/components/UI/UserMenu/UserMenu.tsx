@@ -3,11 +3,13 @@ import {Avatar,Paragraph} from '@/components';
 import { Divider, DropDownMenu, UserWrapper, Wrapper } from './UserMenu.styled';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme,css } from '@emotion/react';
 
 export default function UserMenu(){
 
     const [isOpen,setIsOpen] = useState<boolean>();
     const menuRef = useRef<HTMLDivElement>(null);
+    const theme = useTheme();
 
     function toggleMenu(){
         setIsOpen(prev => !prev);
@@ -31,7 +33,7 @@ export default function UserMenu(){
         <Wrapper ref={menuRef} >
             <UserWrapper onClick={toggleMenu} >
                 <Avatar/>
-                <Paragraph>Miroljub Radojkovic</Paragraph>
+                <Paragraph >Miroljub Radojkovic</Paragraph>
                 {isOpen ? <ChevronUp/>:<ChevronDown/>}
             </UserWrapper>
             {isOpen && <DropDownMenu >

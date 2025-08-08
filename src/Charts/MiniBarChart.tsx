@@ -17,13 +17,14 @@ interface MiniBarChartProps{
     width?: number;
     height?: number;
     invert?:boolean;
+    minWidth?: number
 }
 
 const defaultThreshold = {green:40,orange:70,red:100};
 
 export default function MiniBarChart(props:MiniBarChartProps){
 
-    const {label,value,maxValue,unit,threshold,width,height,invert} = props;
+    const {label,value,maxValue,unit,threshold,width,height,minWidth,invert} = props;
     const theme = useTheme();
     const percent: number = getPercent(value,maxValue);
     const color: string = getColorFromPercent(percent,threshold ?? defaultThreshold,theme,invert);
@@ -31,16 +32,17 @@ export default function MiniBarChart(props:MiniBarChartProps){
     return(<>
        <MainWrapper > 
             <LabelWrappper><Paragraph>{label}</Paragraph><Paragraph>{value}{unit}</Paragraph></LabelWrappper>
-            <BarWrapper width={width} height={height}>
+            <BarWrapper width={width} height={height} minWidth={minWidth}>
                 <BarLine width = {`${percent}%`} color={color}/>
             </BarWrapper>
        </MainWrapper>
     </>);
 }
 
-const BarWrapper = styled.div<{width?:number,height?:number}>(({width,height,theme:{colors,borderRadius}})=>({
+const BarWrapper = styled.div<{width?:number,height?:number,minWidth?:number}>(({width,height,minWidth,theme:{colors,borderRadius}})=>({
         width:width ?? '100%',
         height:height ?? '100%',
+        minWidth: minWidth ?? 0,
         background:colors.background,
         border:`2px solid ${colors.border}`,
         borderRadius: borderRadius.sm,

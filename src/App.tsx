@@ -4,9 +4,12 @@ import { useServicesStore } from './stores';
 import { Routes,Route } from 'react-router-dom';
 import { ServiceDetail,ServiceContainer } from "@/container";
 import {Home} from "@/pages";
-import {Info} from '@/components';
+import {Info,DesktopOnly} from '@/components';
+import { useMediaQuery } from './utils/hooks';
 
 export default function App() {
+  const isMobile = useMediaQuery('(max-width: 960px)');
+
   //Check online status
   useEffect(() => {
   const setOffline = () => useServicesStore.getState().setIsOffline(true);
@@ -20,6 +23,8 @@ export default function App() {
     window.removeEventListener('online', setOnline);
       };
   }, []);
+
+  if(isMobile) return(<DesktopOnly/>);
 
   return (
     <>

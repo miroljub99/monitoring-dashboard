@@ -35,11 +35,7 @@ export const lightTheme = {
 
   media:{
       desktop: '@media (max-width: 1440px)',
-      laptop:  '@media (max-width: 1024px)',
-      tablet:  '@media (max-width: 768px)',
-      mobileL: '@media (max-width: 425px)',
-      mobileM: '@media (max-width: 375px)',
-      mobileS: '@media (max-width: 320px)',
+      laptop:  '@media (max-width: 1250px)',
   },
 
   font: {
@@ -88,7 +84,7 @@ export const darkTheme = {
     secondary: "#B0BEC5",      
     tertiary: "#263238",       
 
-    background: "#121212",     
+    background: "#191919ff",     
     surface: "#1E1E1E",        
     text: "#E0E0E0",           
     textMuted: "#9E9E9E",      

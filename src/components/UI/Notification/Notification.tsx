@@ -81,6 +81,7 @@ export const DropDownMenu = styled.div(({theme:{spacing,colors,shadow}})=>({
     background:colors.surface,
     border:`1px solid ${colors.border}`,
     boxShadow: shadow.sm,
+    zIndex:4,
 }));
 
 export const Divider = styled.div(({theme:{colors,spacing}})=>({

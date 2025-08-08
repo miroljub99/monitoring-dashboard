@@ -31,7 +31,7 @@ export default function ServiceEvents({ events, rowLimit = 5 }: ServiceEventsPro
   );
 }
 
-const Wrapper = styled.div(({ theme:{spacing,colors,borderRadius,shadow} }) => ({
+const Wrapper = styled.div(({ theme:{spacing,colors,borderRadius,shadow,media} }) => ({
   display:'flex',
   flexDirection:'column',
   width:600,
@@ -41,4 +41,7 @@ const Wrapper = styled.div(({ theme:{spacing,colors,borderRadius,shadow} }) => (
   borderRadius: borderRadius.lg,
   border: `1px solid ${colors.border}`,
   boxShadow: shadow.md,
+  [media.laptop]:{
+    flexGrow:1,
+  }
 }));

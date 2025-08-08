@@ -20,17 +20,19 @@ export default function ServiceResponsiveTime({data}: ServiceResposiveTimeProps)
     </>);
 }
 
-const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing,shadow}})=>({
+const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing,shadow,media}})=>({
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center',
     padding:`${spacing(4)} ${spacing(6)}`,
     width:600,
-    height:'100%',
     minWidth:0,
     background:colors.surface,
     borderRadius: borderRadius.lg,
     border: `1px solid ${colors.border}`,
     boxShadow: shadow.md,
+    [media.laptop]:{
+        flexGrow:1,
+    }
 }));

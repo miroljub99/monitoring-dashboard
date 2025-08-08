@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const UserWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow}})=>({
+export const UserWrapper = styled.div(({theme:{spacing,colors,borderRadius,shadow,media}})=>({
     userSelect:'none',
     display:'flex',
     flexDirection:'row',
@@ -13,10 +13,15 @@ export const UserWrapper = styled.div(({theme:{spacing,colors,borderRadius,shado
     "&:hover":{
         background: colors.button.hover,
         boxShadow: shadow.md,
+    },
+    "& > p:first-of-type": {
+        [media.laptop]:{
+            display:'none',
+        }
     }
 }));
 
-export const DropDownMenu = styled.div(({theme:{spacing,colors,shadow}})=>({
+export const DropDownMenu = styled.div(({theme:{spacing,colors,shadow,media}})=>({
     position:'absolute',
     top:`calc(100% + 8px)`,
     display:'flex',
@@ -29,6 +34,14 @@ export const DropDownMenu = styled.div(({theme:{spacing,colors,shadow}})=>({
     background:colors.surface,
     border:`1px solid ${colors.border}`,
     boxShadow: shadow.sm,
+    'span':{
+        color:colors.textMuted,
+    },
+    [media.laptop]:{
+        width:200,
+        right:'2%',
+        zIndex:4,
+    }
 }));
 
 export const Divider = styled.div(({theme:{colors,spacing}})=>({

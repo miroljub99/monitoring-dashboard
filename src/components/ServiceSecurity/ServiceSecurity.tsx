@@ -19,7 +19,7 @@ export default function ServiceSecurity(props:ServiceSecurityProps){
     </>);
 }
 
-const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing,shadow}})=>({
+const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing,shadow,media}})=>({
     display:'flex',
     flexDirection:'column',
     justifyContent:'space-between',
@@ -28,4 +28,9 @@ const MainWrapper = styled.div(({theme:{colors,borderRadius,spacing,shadow}})=>(
     padding:`${spacing(12)} ${spacing(6)}`,
     border: `1px solid ${colors.border}`,
     boxShadow: shadow.md,
+    [media.laptop]:{
+      flexGrow:1,
+      padding:`${spacing(6)} ${spacing(6)}`,
+      gap:spacing(6),
+    }
 }));
