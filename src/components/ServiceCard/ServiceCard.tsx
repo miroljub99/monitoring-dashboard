@@ -37,7 +37,6 @@ export default function ServiceCard(props:ServiceCardProps){
 
     function handleClick(){
         navigate(`/service/${id}`);
-        console.log("kliknuo si na id ",id);
     }
 
     return(<>

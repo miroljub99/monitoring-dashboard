@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {MetricDonutChart} from '@/Charts';
+import {MetricDonutChart} from '@/charts';
 
 interface ServiceMetricsProps{
     cpu: number;

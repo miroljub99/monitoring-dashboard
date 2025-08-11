@@ -1,4 +1,4 @@
-import SecurityCard from "./SecurtityCard";
+import SecurityCard from "./SecurityCard";
 import { ShieldCheck,ShieldX,ScanLine } from "lucide-react";
 import styled from "@emotion/styled";
 

@@ -41,7 +41,7 @@ export default function ServiceList(){
         return () => {
             node.removeEventListener("scroll", handler);
         };
-    }, [scrollRef.current]);
+    }, []);
 
     if(!services.length && loading) return <Loading label="Loading..."/>;
     if(error) return <Error label={error} />;

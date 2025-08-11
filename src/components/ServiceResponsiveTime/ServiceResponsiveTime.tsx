@@ -1,13 +1,13 @@
-import ResponsiveTimeChart from "@/Charts/ResponsiveTimeChart";
+import ResponsiveTimeChart from "@/charts/ResponsiveTimeChart";
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 import { Paragraph } from "../UI/Typography";
 
-interface ServiceResposiveTimeProps{
+interface ServiceResponsiveTimeProps{
     data:{timestamp: string,value: number}[];
 }
 
-export default function ServiceResponsiveTime({data}: ServiceResposiveTimeProps){
+export default function ServiceResponsiveTime({data}: ServiceResponsiveTimeProps){
 
     const theme = useTheme();
 

@@ -58,12 +58,6 @@ export const MetricSection = styled.div(({theme:{spacing,media}})=>({
     gap:spacing(3),
     flex:1,
     maxWidth:320,
-    [media.desktop]:{
-        
-    },
-    [media.laptop]:{
-        
-    },
 }));
 
 export const TechnicalSection = styled.div(({theme:{spacing,media}})=>({

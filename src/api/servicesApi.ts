@@ -1,7 +1,8 @@
 import { type Service } from "../types";
 import axios from "axios";
 
-export const api = "http://localhost:4000/services";
+export const api = 'https://monitoring-db-production.up.railway.app/services'
+export const apiLocal = "http://localhost:8080/services";
 
 
 /**
@@ -11,7 +12,7 @@ export const api = "http://localhost:4000/services";
  */
 export async function fetchServices(){
     try {
-        const response = await axios.get<Service[]>(api);
+        const response = await axios.get<Service[]>(apiLocal);
         return response.data;
 
     } catch (error) {

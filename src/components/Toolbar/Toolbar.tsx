@@ -87,9 +87,10 @@ const AboveSide = styled.div(({theme:{spacing}})=>({
     
 }));
 
-const BoxWrapper = styled.div(({theme:{spacing,borderRadius,colors,shadow,media}})=>({
+const BoxWrapper = styled.div(({theme:{spacing,borderRadius,colors,shadow}})=>({
     display:'flex',
     flexDirection:'column',
+    justifyContent:'space-between',
     gap:spacing(4),
     width:'100%',
     padding:`${spacing(6)} ${spacing(4)}`,
@@ -97,7 +98,4 @@ const BoxWrapper = styled.div(({theme:{spacing,borderRadius,colors,shadow,media}
     background:colors.surface,
     border:`1px solid ${colors.border}`,
     boxShadow:shadow.sm,
-    [media.desktop]:{
-        justifyContent:'space-between',
-    }
 }));
