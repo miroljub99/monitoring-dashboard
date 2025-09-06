@@ -12,9 +12,6 @@ export const DashboardLayout = styled.div`
     ${props => props.theme.media.laptop}{
     grid-template-columns: 1fr 11fr;
     };
-    ${props => props.theme.media.tablet}{
-    grid-template-columns: 1fr;
-    };
 `;
 
 export const SideBarLayout = styled.aside`
@@ -24,10 +21,6 @@ export const SideBarLayout = styled.aside`
     border-right: 2px solid ${({theme})=>( theme.colors.border)};
     border-bottom: 3px solid ${({theme})=>( theme.colors.border)};
     box-shadow: ${({theme})=>( theme.shadow.md)};
-
-    ${props => props.theme.media.tablet}{
-     display: none;
-    }
 `;
 
 export const ContentAreaLayout = styled.div`
@@ -61,10 +54,6 @@ export const MainLayout = styled.main`
     ${props => props.theme.media.laptop}{
         padding: ${({theme:{spacing}})=>(spacing(2))} ${({theme:{spacing}})=>(spacing(3))};
     };
-    ${props => props.theme.media.tablet}{
-        padding: ${({theme:{spacing}})=>(spacing(2))} ${({theme:{spacing}})=>(spacing(2))};
-        margin: 0;
-    }
 `;
 
 export const HeaderLayout = styled.div`

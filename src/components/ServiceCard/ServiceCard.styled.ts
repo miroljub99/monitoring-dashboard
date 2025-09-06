@@ -51,7 +51,7 @@ export const HeaderSection = styled.div(({theme:{spacing,media}})=>({
     },
 }));
 
-export const MetricSection = styled.div(({theme:{spacing,media}})=>({
+export const MetricSection = styled.div(({theme:{spacing}})=>({
     display:'grid',
     gridTemplateColumns:'repeat(3,1fr)',
     alignItems:'center',
