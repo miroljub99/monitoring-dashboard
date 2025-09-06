@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { MiniBarChart } from "@/charts";
+import MiniBarChart  from '../../charts/MiniBarChart';
 
 interface ServiceStatsProps{
     uptime: number;

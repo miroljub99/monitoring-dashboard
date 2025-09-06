@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Heading2,Heading3,Paragraph } from "../UI/Typography";
-import { StatusBadgeChart} from "@/charts";
+import  StatusBadgeChart from '../../charts/StatusBadgeChart';
 import { useCountry } from "@/graphql";
 
 interface MainInformationProps{

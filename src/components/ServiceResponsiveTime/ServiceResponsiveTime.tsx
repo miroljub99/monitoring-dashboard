@@ -1,4 +1,4 @@
-import ResponsiveTimeChart from "@/charts/ResponsiveTimeChart";
+import ResponsiveTimeChart from '../../charts/ResponsiveTimeChart';
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 import { Paragraph } from "../UI/Typography";
